@@ -28,17 +28,17 @@ VALUES ("Accountant", "90000", 3);
 
 -- employee seed --
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Michael", "Scott", 1, 2);
+VALUES ("Michael", "Scott", 1, null);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Jim", "Halpert", null, 3);
+VALUES ("Jim", "Halpert", 2, 1);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Dwight", "Schrute", 2, 4);
+VALUES ("Dwight", "Schrute", 3, null);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Andy", "Bernard", 3, 5);
+VALUES ("Andy", "Bernard", 4, 3);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Pam", "Beasley", null, 6);
+VALUES ("Pam", "Beasley", 5, null);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Kevin", "Malone", null, 7);
+VALUES ("Kevin", "Malone", 6, 5);
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-VALUES ("Holly", "Flax", 4, 8);
+VALUES ("Holly", "Flax", 7, null);
 
