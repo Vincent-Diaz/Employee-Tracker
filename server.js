@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
     password: "Diaz5205",
     database: "employees_trackerDB"
 });
-//connection.query = util.promisify(connection.query);
+
 connection.connect(function (err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId + "\n");
@@ -33,8 +33,7 @@ function start() {
             "Add department",
             "Add role",
             "Update employee role",
-            "Exit"
-        ]
+            "Exit"]
     }).then(answers => {
         console.log(answers.choice);
         switch (answers.choice) {
@@ -107,15 +106,8 @@ function viewRoles() {
 
 async function addEmployee() {
     let manager = await connection.query("SELECT manager_id, first_name, last_name FROM employee")
-    console.log(manager);
     let roles = await connection.query("SELECT * FROM roles")
-    //console.log(roles);
-    //, function(err, res){
-    //     if(err) throw err;
-    //     for (let i = 0; i < rolesArr.length; i++) {
-    //         rolesArr.push(res[i].title);
-      //  }
-   // })
+
      inquirer.prompt([
         {
             name: "firstName",
@@ -218,8 +210,8 @@ function addRole() {
 }
 
 async function updateEmployee(){
-   let update = await connection.query("SELECT first_name, last_name FROM employee")
-   //let manager = await connection.query("SELECT manager_id, first_name, last_name FROM employee")
+   let update = await connection.query("SELECT first_name, last_name, id FROM employee")
+   // let manager = await connection.query("SELECT manager_id, first_name, last_name FROM employee")
    let roles = await connection.query("SELECT * FROM roles")
     inquirer.prompt([
         {
